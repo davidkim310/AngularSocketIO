@@ -1,0 +1,14 @@
+<div ng-controller='chatsCtrl' class="chatsContainer" ng-init="getMessages()">
+  <h1>Message Board</h1>
+  <div class="socket">
+    <script>
+    var socket = io();
+    </script>
+  </div>
+  <ul id="messages" ng-controller='chatsCtrl' ng-repeat='chat in messages'>
+    <li>{{chat}}</li>
+  </ul>
+  <form action="">
+    <input id="m" ng-model='value' autocomplete="off" /><button type='submit' ng-click='sendMessage(value)'>Send</button>
+  </form>
+</div>
