@@ -5,7 +5,7 @@
     var socket = io();
     </script>
   </div>
-  <ul id="messages" ng-controller='chatsCtrl' ng-repeat='chat in messages'>
+  <ul id="messages" ng-controller='chatsCtrl' ng-repeat='chat in messages track by $index'>
     <li>{{chat}}</li>
   </ul>
   <form action="">
