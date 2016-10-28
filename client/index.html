@@ -1,16 +1,15 @@
 <!doctype html>
-<html>
+<html ng-app="AngularSocket">
   <head>
     <title>AngularSocketIO</title>
     <link rel="stylesheet" href="/css/master.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src='/chats/chats.js'></script>
+    <script src='app.js'></script>
   </head>
-  <body ng-app="AngularSocket">
+  <body>
     <div ui-view></div>
   </body>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src='https://cdn.socket.io/socket.io-1.2.0.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
-  <script src='/chats/chats.js'></script>
-  <script src='app.js'></script>
 </html>

@@ -1,15 +1,19 @@
 angular.module('AngularSocket.chats', [])
-.controller('chatsCtrl', function ($scope) {
+.controller('chatsCtrl', function ($scope, $window) {
+  var socket = io.connect($window.location.origin)
   $scope.messages = []
-  var socket = io.connect('http://localhost:8080')
-  $scope.sendMessage = function (msg){
-    socket.emit('chat message', msg)
+
+  $scope.sendMessage = function (){
+    socket.emit('chat message', {message: $scope.value})
+    console.log('scopevalue: ', $scope.value);
   }
   socket.on('chat message server', function(msg) {
-    $scope.$apply(function(msg){
-      console.log(msg);
-      $scope.messages.push(msg.value)
+    console.log('msg: ', msg);
+    $scope.$apply(function(){
+      $scope.messages.push(msg.message)
       console.log($scope.messages);
     })
   })
+
+
 })
